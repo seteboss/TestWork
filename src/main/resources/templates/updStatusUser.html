@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>TestWork</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+            integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+            crossorigin="anonymous"></script>
+
+    <style type="text/css">
+
+    </style>
+    <body >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+
+        <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+        <div class="collapse navbar-collapse" >
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/loader">Загрузчик</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/addUser">Добавление нового пользователя</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/getUserInfo">Получение информации о пользователе</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/updStatusUser">Изменение статуса пользователя</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/statServer">Статистика сервера</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <form th:action="@{/updStatusUser}" method="post">
+        <input type="number" name="id" placeholder="ID">
+        <input type="text" name="status" placeholder="Status">
+        <button type="submit">Получить информацию</button>
+    </form>
+
+    <!--/*@thymesVar id="id" type=""*/-->
+    <div th:if="${id}">
+        <label>ID пользователя </label>
+        <span th:text="${id}">ID пользователя</span>
+    </div>
+
+
+    <!--/*@thymesVar id="oldStatus" type=""*/-->
+    <div th:if="${oldStatus}">
+        <label>Старый статус </label>
+        <span th:text="${oldStatus}">Старый статус</span>
+    </div>
+
+    <!--/*@thymesVar id="newStatus" type=""*/-->
+    <div th:if="${newStatus}">
+        <label>Новый статус </label>
+        <span th:text="${newStatus}">Новый статус</span>
+    </div>
+
+    <!--/*@thymesVar id="error" type=""*/-->
+    <div th:if="${error}">
+        <label>Ошибка </label>
+        <span th:text="${error}"></span>
+    </div>
+
+
+
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </body>
+
+
+</head>
+
+
+
+
+
+</html>
